@@ -46,19 +46,15 @@ public class AreaComercial {
         
         System.out.println("Seleccione un numero de servicio");
         int idS = sc.nextInt();
-        /*
-        Servicio servicioSelec =  ls.forEach(s -> {
-            if(idS = s.getId()){
-                return s;
-            }
-        })
+        
+        Servicio ser  = control.bucsarServicio(idS);
         
          ArrayList<Servicio> listemporal = new ArrayList();
-         listatemporal.add(s);
+         listemporal.add(ser);
         Cliente cli = new Cliente(id, nombre, listemporal);
         
         control.crearCliente(cli);
-        */
+        
         
     }
     
