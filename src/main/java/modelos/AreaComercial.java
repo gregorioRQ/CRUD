@@ -42,7 +42,7 @@ public class AreaComercial {
         String nombre = sc.next();
         System.out.println("Que servicio desea contratar?");
         ArrayList<Servicio> ls = control.listaServicio();
-        ls.forEach( s -> System.out.print(s.getId() +" -- " + s.getNombre()));
+        ls.forEach( s -> System.out.println("Numero de servicio" +s.getId() +" -- " + s.getNombre()));
         
         System.out.println("Seleccione un numero de servicio");
         int idS = sc.nextInt();

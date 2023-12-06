@@ -34,8 +34,14 @@ public class Sistema_de_reporte_de_incidentes {
             AreaComercial ac = new AreaComercial();
             
             Scanner sc = new Scanner(System.in);
-            System.out.println("--- 1 agregar tec etc, 2 agregar cli etc, 3 atender agragar problema etc,  5 añadir servicio");
-            System.out.println("4 si sos un tecnico, para ver tus notificaciones");
+            System.out.println("********************************************************************************************************************");
+            System.out.println("********************************************************************************************************************");
+
+            System.out.println("-- 1 para  gestion de tecnicos, emitir un informe o saber quien fue el tecnico con mas incidentes resueltos en x dias");
+            System.out.println("-- 2 para gestion de clientes o para chequear por un incidente de x cliente");
+            System.out.println("-- 3 para reportar un incidente con un servicio");
+            System.out.println("-- 4 si sos un tecnico, para ver tus notificaciones");
+            System.out.println("-- 5 para añadir un nuevo servicio");
             int opUs = sc.nextInt();
             
             switch(opUs){
