@@ -40,22 +40,35 @@ public class AreaComercial {
         int id = sc.nextInt();
         System.out.println("nombre");
         String nombre = sc.next();
-        System.out.println("Que servicio desea contratar?");
-        ArrayList<Servicio> ls = control.listaServicio();
-        ls.forEach( s -> System.out.println("Numero de servicio" +s.getId() +" -- " + s.getNombre()));
+        System.out.println("Que servicio desea contratar? ");
+        System.out.println("22 -- servicio01; 33 -- servicio02");
+        int op = sc.nextInt();
+        String nombreS = "";
         
-        System.out.println("Seleccione un numero de servicio");
-        int idS = sc.nextInt();
+        switch(op){
+            case 22: id = 22; nombreS = "servicio01";
+            break;
+            case 33: id = 33; nombreS = "servicio02";
+            break;
+        }
         
-        Servicio ser  = control.bucsarServicio(idS);
+        ArrayList<Servicio> listemporal = new ArrayList();
+        ArrayList<Incidente> ls = new ArrayList();
         
-         ArrayList<Servicio> listemporal = new ArrayList();
-         listemporal.add(ser);
         Cliente cli = new Cliente(id, nombre, listemporal);
-        
         control.crearCliente(cli);
         
+        Servicio ser = new Servicio(id, nombreS, cli, ls);
+        control.crearServicio(ser);
         
+        ArrayList<Servicio> lss = new ArrayList();
+        lss.add(ser);
+        
+        cli.setListaServicios(lss);
+        
+        control.editarCliente(cli);
+        
+ 
     }
     
     public void eliminarCli(){

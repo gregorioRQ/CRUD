@@ -35,7 +35,7 @@ public class PaneldelTecnico {
  
             List<Incidente> listainc = tec.getListaIncidentes().stream().collect(Collectors.toList());
             
-            System.out.print("++++++++++++++++++++++++++++++++++++++");
+            
             System.out.println("Desea resolver alguna? ingrese el id de la tarea");
             int idT = sc.nextInt();
             System.out.println("ingrese la fecha // Ejemplo de fecha en formato dia-mes-año");
@@ -51,6 +51,7 @@ public class PaneldelTecnico {
                     control.editarIncidente(inc);
                     
                     tec.setCantIncResueltos(tec.getCantIncResueltos() + 1);
+                    tec.setIncAresolver(tec.getIncAresolver() - 1);
                     control.editarTecnico(tec);
                 }
             }
