@@ -2,10 +2,16 @@
 <persistence version="2.2" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence           http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd">
   <persistence-unit name="sriJPAPU" transaction-type="RESOURCE_LOCAL">
     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
-    <class>modelos.Cliente</class>
-    <class>modelos.Tecnico</class>
-    <class>modelos.Servicio</class>
-    <class>modelos.Incidente</class>
+    <class>com.mycompany.sistema_de_reporte_de_incidentes.modelos.Incidente</class>
+    <class>com.mycompany.sistema_de_reporte_de_incidentes.modelos.TipoDeProblema</class>
+    <class>com.mycompany.sistema_de_reporte_de_incidentes.modelos.AreaComercial</class>
+    <class>com.mycompany.sistema_de_reporte_de_incidentes.modelos.Operador</class>
+    <class>com.mycompany.sistema_de_reporte_de_incidentes.modelos.Cliente</class>
+    <class>com.mycompany.sistema_de_reporte_de_incidentes.modelos.RRHH</class>
+    <class>com.mycompany.sistema_de_reporte_de_incidentes.modelos.Servicio</class>
+    <class>com.mycompany.sistema_de_reporte_de_incidentes.modelos.Especialidad</class>
+    <class>com.mycompany.sistema_de_reporte_de_incidentes.modelos.MesaDeAyuda</class>
+    <class>com.mycompany.sistema_de_reporte_de_incidentes.modelos.Tecnico</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/sistema_reporte_incidentes?serverTimezone=UTC"/>
       <property name="javax.persistence.jdbc.user" value="root"/>

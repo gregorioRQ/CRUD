@@ -4,62 +4,43 @@
 
 package com.mycompany.sistema_de_reporte_de_incidentes;
 
+import com.mycompany.sistema_de_reporte_de_incidentes.controladores.Controlador;
+import com.mycompany.sistema_de_reporte_de_incidentes.modelos.AreaComercial;
+import com.mycompany.sistema_de_reporte_de_incidentes.modelos.Cliente;
+import com.mycompany.sistema_de_reporte_de_incidentes.modelos.Especialidad;
+import com.mycompany.sistema_de_reporte_de_incidentes.modelos.Incidente;
+import com.mycompany.sistema_de_reporte_de_incidentes.modelos.MesaDeAyuda;
+import com.mycompany.sistema_de_reporte_de_incidentes.modelos.Operador;
+import com.mycompany.sistema_de_reporte_de_incidentes.modelos.RRHH;
+import com.mycompany.sistema_de_reporte_de_incidentes.modelos.Servicio;
+import com.mycompany.sistema_de_reporte_de_incidentes.modelos.Tecnico;
+import com.mycompany.sistema_de_reporte_de_incidentes.modelos.TipoDeProblema;
+import java.util.ArrayList;
+import java.util.Date;
 
 
-import java.text.ParseException;
-import java.util.Scanner;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import modelos.AreaComercial;
-import modelos.Operador;
-import modelos.PaneldelTecnico;
-import modelos.RRHH;
-
-
-
-/**
- *
- * @author PC
- */
 public class Sistema_de_reporte_de_incidentes {
 
     public static void main(String[] args) {
+        Controlador ctrl = new Controlador();
         
-  
-        try {
-            Operador op = new Operador();
-            PaneldelTecnico pt = new PaneldelTecnico();
-            
-            RRHH rh = new RRHH();
-            AreaComercial ac = new AreaComercial();
-            
-            Scanner sc = new Scanner(System.in);
-            System.out.println("********************************************************************************************************************");
-            System.out.println("********************************************************************************************************************");
-
-            System.out.println("-- 1 para  gestion de tecnicos, emitir un informe o saber quien fue el tecnico con mas incidentes resueltos en x dias");
-            System.out.println("-- 2 para gestion de clientes o para chequear por un incidente de x cliente");
-            System.out.println("-- 3 para reportar un incidente con un servicio");
-            System.out.println("-- 4 si sos un tecnico, para ver tus notificaciones");
-           
-            int opUs = sc.nextInt();
-            
-            switch(opUs){
-                case 1: rh.gestionRH();
-                break;
-                case 2: ac.gestionarClientes();
-                break;
-                case 3: op.llamar();
-                break;
-                case 4: pt.verificar();
-                break;
-               
-            };
-        } catch (ParseException ex) {
-            Logger.getLogger(Sistema_de_reporte_de_incidentes.class.getName()).log(Level.SEVERE, null, ex);
-        }
-
-
-    }  
+        ArrayList<Servicio> servicios = new ArrayList();
+        ArrayList<Incidente> incidentes = new ArrayList();
+        ArrayList<Cliente> clientes = new ArrayList();
+        
+        AreaComercial aC = new AreaComercial(7,"Sergio", new Date(), clientes);
+        ctrl.crearAreaComercial(aC);
+        
+        Cliente c = new Cliente(423l, "Lisa", 12312312l, 3764509705l, new Date(), null, servicios, incidentes, aC);
+         ctrl.crearCliente(c);
+         
+         clientes.add(c);
+         
+         aC.setClientes(clientes);
+         
+         ctrl.editarAreaComercial(aC);
+         
+         
+    }
     
 }
